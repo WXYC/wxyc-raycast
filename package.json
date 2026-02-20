@@ -1,0 +1,52 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "wxyc-library-lookup",
+  "title": "WXYC Library Lookup",
+  "description": "Search the WXYC music library using natural language queries with AI-powered parsing",
+  "icon": "extension-icon.png",
+  "author": "jakemurphy",
+  "categories": ["Other"],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "lookup",
+      "title": "Library Lookup",
+      "description": "Search the WXYC music library with natural language",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "apiBaseUrl",
+      "type": "textfield",
+      "required": false,
+      "title": "API Base URL",
+      "description": "Base URL of the request-o-matic API",
+      "default": "https://request-o-matic-production.up.railway.app/api/v1"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.104.0",
+    "@raycast/utils": "^2.2.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "~22.13.0",
+    "@types/react": "^19.0.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.4.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  },
+  "overrides": {
+    "@types/react": "^19.0.0"
+  },
+  "scripts": {
+    "build": "ray build -e dist -o dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish",
+    "test": "vitest run"
+  }
+}
